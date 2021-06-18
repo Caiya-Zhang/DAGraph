@@ -1,0 +1,236 @@
+1.	Description
+Our program DAGraph is a statistical analysis system that allows for retrieving demographic and other data from the database World Bank. It processes the data with different types of analyses. It also renders the retrieved data or the processed data with different categories of visualization which are selected by the user.
+
+2.	Activities Plan
+•	Project Backlog and Sprint Backlog
+  1.	Environment: done before writing analysis classes
+      a.	Confirm third-party jar packages referenced
+          i.	Chart-related
+          ii.	Json-related
+      b.	Maven configuration
+  2.	Code: most important and urgent part
+      a.	Main
+      b.	Analysis
+          i.	Chart
+          ii.	Text
+      c.	Constants
+      d.	Exception
+      e.	Panels
+          i.	Top bar
+          ii.	Bottom bar
+          iii.	Chart fields
+      f.	Utils
+          i.	Indicator api
+      g.	Windows
+          i.	Login
+          ii.	MainUI
+  3.	Test: should be done after a draft code is written
+  4.	Debug: code should be modified after tests
+  5.	Report: should be written in parts after the visualizer is finished
+
+
+
+•	Group Meeting Logs
+
+Present Group Members	Meeting Date	Issues Discussed / Resolved
+1. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
+   Mar 25th
+   Topic: Separate Tasks (130mins)
+  1. Schedule 7 packages;
+  2. Learn to configure a maven environment;
+  3. Talk about demo code for MainUI and GetData;
+  4. Talk about the indicator api;
+
+2. Vivian Liang, Jiawei Li, Caiya Zhang, and Liu Fan
+   Mar 30st	
+   Topic: Discussion about Modifying Code (30mins)
+  1. Discuss debatable details in analysis part;
+  2. Discuss details about warning and error messages;
+
+3. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
+   Apr 3rd	
+   Topic: Test and Prepare for Our Report (60 mins)
+  1. Demonstrate a regular login and calculating procedure;
+  2. Test different possible situations and confirm debugging details;
+
+4. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
+   Apr 6th	
+   Topic: Prepare for Our Report (45 mins)
+1. Final check our calculator;
+2. Writing report and presentation slide;
+
+
+
+3.	Test Driven Development
+
+  Test ID: Test 1: Login
+  Category: evaluation of user credentials stored on file or DB
+  Requirements Coverage: UC1-Successful-User-Login
+  Initial Condition:	the system has been initiated and runs
+  Input Data:	String Username , String Password
+  Procedure:
+          1. The user selects login
+          2. The user provides a username
+          3. The user provides a password 
+          4. The user logs-in into the system and is presented with the main UI window
+  Expected Outcome: the login form closes, and the user is presented with the main UI window
+  Notes:	the user should provide only alphanumeric usernames and passwords without any special characters
+
+
+  Test ID: Test 2: Invalid Login
+  Category: evaluation of user credentials stored on file or DB
+  Requirements Coverage: UC1-Wrong-User-Login
+  Initial Condition:	the system has been initiated and runs
+  Input Data: String Username, String Password
+  Procedure: 
+          1. The user provides a username
+          2. The user provides a wrong password 
+          3. The user selects login
+          4. A popup window is shown and the user can enter valid information again
+  Expected Outcome:	A pop-up message is shown, and the user can re-enter the password
+  Notes:	the user should provide only alphanumeric usernames and passwords without any special characters
+
+
+  Test ID: Test 3: Analysis Selection
+  Category:	evaluation of the system to retrieve the correct data from the users’ selection of analysis
+  Requirements Coverage:	UC2-Successful-Run-Analysis
+  Initial Condition: 	Initial analysis of the system
+  Input Data:	String type
+  Procedure:
+          1. The user selects type
+          2. System retrieves data and display in modular way
+  Expected Outcome:	System performs correct analysis data in modular way
+  Notes:
+
+
+  Test ID:	Test 4: Empty
+  Category:	evaluation of system empties the data correctly without exception
+  Requirements Coverage:	UC2-Successful-Empties-Analysis
+  Initial Condition: 	After performing analysis, system can initialize all the data
+  Input Data:	void
+  Procedure:
+          1. The user selects type
+          2. System retrieve data
+          3. The user re-select the type 
+          4. System empties the type, analysis data
+  Expected Outcome:	The analysis data will be emptied, and the user is performed with the main UI windows.
+  Notes:	The user changes the analysis type, the system empties the analysis.
+
+  Test ID:	Test 5: Country Test
+  Category:	Evaluation of fetching proper country
+  Requirements Coverage:	UC3-Successful-Country
+  Initial Condition:	User select the type to analysis
+  Input Data:	String Country
+  Procedure:	
+          1. The user selects country
+          2. System fetching the corresponding data
+  Expected Outcome:	the corresponding country data is fetching
+  Notes:	System only processes the proper country with the analysis chosen.
+
+  Test ID:	Test 6: Invalid Country Test
+  Category:	Evaluation of fetching improper country
+  Requirements: Coverage	UC3-Unsuccessful-Country
+  Initial Condition: 	User select the type to analysis
+  Input Data:	String Country
+  Procedure:
+          1. The user selects country which is not on the list
+          2. System pops up a notification and ask the user for another selection
+  Expected Outcome:	a small window with notification about the wrong country data selected
+
+  Test ID:	Test 7: Year Test
+  Category:	Evaluation of fetching proper year
+  Requirements Coverage:	UC4-Successful-Year
+  Initial Condition: 	User select the type and corresponding country to analysis
+  Input Data:	int startYear, int endYear
+  Procedure:
+          1. The user selects start year
+          2. The user selects end year
+          3. System fetching the corresponding data
+  Expected Outcome:	the corresponding year data is fetching
+  Notes:	System only processes the proper year range with the analysis and country chosen.
+
+  Test ID:	Test 8: Invalid Year Test
+  Category:	Evaluation of fetching improper year range
+  Requirements Coverage:	UC4-Unsuccessful-Year
+  Initial Condition:	User select the type and corresponding country to analysis
+  Input Data:	int startYear, int endYear
+  Procedure:
+          1. The user selects start year
+          2. The user selects end year
+          3. System notices that the year of the data is not available
+          4. System pops up a notification and ask the user for another selection
+  Expected Outcome:	a small window with notification about the wrong data selected
+
+  Test ID:	Test 9: Add Viewer
+  Category:	Evaluation of the new added viewer 
+  Requirements Coverage:	UC5-Successful-Add-Viewer
+  Initial Condition: 	The user selects the type with corresponding country and year, the system is ready to present the analysis
+  Input Data:	String type, String Country, int startYear, int endYear
+  Procedure:
+          1. The user add a new viewer
+          2. System checks for the compatible 
+          3. System added the new viewer
+  Expected Outcome:	The added viewer with proper data is present
+  Notes:	System only performs the compatible viewers with the analysis chosen.
+
+  Test ID:	Test 10: Invalid Add Viewer
+  Category:	Evaluation of the failure to add viewer 
+  Requirements Coverage:	UC5-Unsuccessful-Add-Viewer
+  Initial Condition: 	The user selects the type with corresponding country and year, the system is ready to present the analysis
+  Input Data:	String type, String Country, int startYear, int endYear
+  Procedure:
+          1. The user add a new viewer
+          2. System checks for the compatible 
+          3. The added viewer is not compatible to the analysis data, then system pop up a notification window
+  Expected Outcome:	A pop up window to notify user
+  Notes:
+
+  Test ID:	Test 11: Delete Viewer
+  Category:	Evaluation of the deleted viewer 
+  Requirements Coverage:	UC6-Successful-Delete-Viewer
+  Initial Condition: 	The user selects the type with corresponding country, year, and viewers, the system is ready to present the analysis
+  Input Data:	String type, String Country, int startYear, int endYear
+  Procedure:
+          1. The user selects a viewer to delete
+          2. System checks for the target viewer if exists
+          3. System deleted the viewer
+  Expected Outcome:	Data is present with selected viewers after deletion
+  Notes:
+
+  Test ID:	Test 12: Invalid Delete Viewer
+  Category:	Evaluation of the failure to delete viewer 
+  Requirements Coverage:	UC6-Unsuccessful-Delete-Viewer
+  Initial Condition: 	The user selects the type with corresponding country, year, and viewers, the system is ready to present the analysis
+  Input Data:	String type, String Country, int startYear, int endYear
+  Procedure: 
+          1. The user selects a viewer to delete
+          2. System checks for the target viewer if exists
+          3. System pops up a notification window
+  Expected Outcome:	A pop-up window is shown to notify user the selective viewer doesn’t exit
+  Notes:
+
+  Test ID:	Test 13: Re-calculate
+  Category:	Evaluation of recalculation of the data
+  Requirements Coverage:	UC7-Successful-Recalculate
+  Initial Condition: 	System remains the previous analysis data and user recalculate the data with the same analysis type
+  Input Data:	String Country, int startYear, int endYear
+  Procedure:
+          1. The user selects country
+          2. The user selects start and end year
+          3. System initiate the algorithm
+          4. System retrieves corresponding data
+  Expected Outcome:	Display the new selected data and viewers
+  Notes:	The user cannot change the type if they recalculate
+
+
+  Test ID:	Test 14: Display Result
+  Category: Evaluation of display
+  Requirements Coverage: UC8-Successful-Display-Result
+  Initial Condition:	All the data, algorithm, views are ready to display.
+  Input Data:	String type, String Country, int startYear, int endYear
+  Procedure: 1. System do algorithm 
+             2. System display the result with corresponding viewers
+  Expected Outcome:The selected data with corresponding viewers are displayed
+  Notes	
+
+
