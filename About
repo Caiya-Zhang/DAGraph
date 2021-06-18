@@ -1,3 +1,6 @@
+# DAGraph  
+developed by Caiya Zhang, Liu Fan, Vivian Liang, and Jiawei Li  
+
 1.	Description
 Our program DAGraph is a statistical analysis system that allows for retrieving demographic and other data from the database World Bank. It processes the data with different types of analyses. It also renders the retrieved data or the processed data with different categories of visualization which are selected by the user.
 
@@ -27,39 +30,6 @@ Our program DAGraph is a statistical analysis system that allows for retrieving 
   3.	Test: should be done after a draft code is written
   4.	Debug: code should be modified after tests
   5.	Report: should be written in parts after the visualizer is finished
-
-
-
-•	Group Meeting Logs
-
-Present Group Members	Meeting Date	Issues Discussed / Resolved
-1. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
-   Mar 25th
-   Topic: Separate Tasks (130mins)
-  1. Schedule 7 packages;
-  2. Learn to configure a maven environment;
-  3. Talk about demo code for MainUI and GetData;
-  4. Talk about the indicator api;
-
-2. Vivian Liang, Jiawei Li, Caiya Zhang, and Liu Fan
-   Mar 30st	
-   Topic: Discussion about Modifying Code (30mins)
-  1. Discuss debatable details in analysis part;
-  2. Discuss details about warning and error messages;
-
-3. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
-   Apr 3rd	
-   Topic: Test and Prepare for Our Report (60 mins)
-  1. Demonstrate a regular login and calculating procedure;
-  2. Test different possible situations and confirm debugging details;
-
-4. Vivian Liang, Jiawei Li, Liu Fan, and Caiya Zhang	
-   Apr 6th	
-   Topic: Prepare for Our Report (45 mins)
-1. Final check our calculator;
-2. Writing report and presentation slide;
-
-
 
 3.	Test Driven Development
 
