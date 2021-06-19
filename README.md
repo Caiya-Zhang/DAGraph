@@ -1,5 +1,6 @@
 # DAGraph  
-developed by Caiya Zhang, Liu Fan, Vivian Liang, and Jiawei Li  
+DAGraph is a statistical analysis system that allows for retrieving demographic, environmental, and health data from the World Bank. It renders the retrieved or processed data with different categories of visualization which are selected by the user.   
 
-## Description
-Our program DAGraph is a statistical analysis system that allows for retrieving demographic and other data from the database World Bank. It processes the data with different types of analyses. It also renders the retrieved data or the processed data with different categories of visualization which are selected by the user.
+The program is developedn by Caiya Zhang, Liu Fan, Vivian Liang, and Jiawei Li.  
+
+More detailed information of this project can be found in the Project-Description.pdf file.
